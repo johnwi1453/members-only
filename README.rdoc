@@ -1,0 +1,1 @@
+members-only project -- http://www.theodinproject.com/ruby-on-rails/authentication
