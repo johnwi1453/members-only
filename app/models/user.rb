@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   before_create :create_remember_token
+  has_many :posts
 
   has_secure_password
   validates :password, length: { minimum: 4 }

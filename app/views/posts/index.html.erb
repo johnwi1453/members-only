@@ -1,0 +1,27 @@
+<h1>Index</h1>
+
+
+<div>
+  <% if logged_in? %>
+  <%= link_to "(#{current_user.name}) Log out", logout_path, method: "delete" %>
+  <% else %>
+    <%= link_to 'Log in', login_path %>
+  <% end %>
+</div>
+
+<h1>Members Only Posts</h1>
+
+<% @posts.each do |post| %>
+  <% if logged_in? %>
+    <p>
+      Posted by:
+      <%= post.user.name %>
+    </p>
+  <% end %>
+  <h4><%= post.title %></h4>
+  <p><%= post.body %></p>
+<% end %>
+
+<% if logged_in? %>
+  <%= link_to "Create a Post", new_post_path %>
+<% end %>
